@@ -238,12 +238,18 @@ const EventContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
   gap: 40px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const EventInfo = styled.div`
   flex: 1;
+  min-width: 250px;
 `;
 
 const FilmTitle = styled.h2`
@@ -262,18 +268,32 @@ const FilmInfo = styled.div`
   flex: 2;
   display: flex;
   gap: 20px;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const FilmPoster = styled.img`
   width: 200px;
   height: auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+  }
 `;
 
 const FilmSynopsis = styled.p`
   font-size: 1rem;
   line-height: 1.6;
   color: #333;
+`;
+
+const FilmDetails = styled.div`
+  flex: 1;
 `;
 
 const AboutSection = styled.section`
@@ -307,7 +327,7 @@ function Home() {
     const whiteSection = document.querySelector('.white-section');
     if (whiteSection) {
       window.scrollTo({
-        top: whiteSection.offsetTop - 50, // Subtracting 50px to account for any potential fixed headers
+        top: whiteSection.offsetTop - 50,
         behavior: 'smooth'
       });
     }
@@ -349,12 +369,12 @@ function Home() {
             </EventInfo>
             <FilmInfo>
               <FilmPoster src={freewillyPoster} alt="Film Poster" />
-              <div>
+              <FilmDetails>
                 <FilmTitle>Free Willy</FilmTitle>
                 <FilmSynopsis>
                   "Free Willy" is a heartwarming family drama about a young boy who befriends a captive orca named Willy. As their bond grows, the boy becomes determined to return Willy to his natural habitat. This touching story explores themes of friendship, freedom, and environmental responsibility.
                 </FilmSynopsis>
-              </div>
+              </FilmDetails>
             </FilmInfo>
           </EventContainer>
         </EventSection>
