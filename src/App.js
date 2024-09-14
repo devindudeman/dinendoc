@@ -21,7 +21,7 @@ const AppWrapper = styled.div`
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <GlobalStyle />
       <AppWrapper>
         <Routes>
