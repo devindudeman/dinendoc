@@ -118,57 +118,6 @@ const EventSubtitle = styled.span`
   font-size: 0.8rem;
 `;
 
-const Tagline = styled.p`
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-  max-width: 800px;
-  line-height: 1.6;
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 10px 10px 0 0 #c7b299;
-  font-family: 'Playfair Display', serif;
-`;
-
-const CTAButton = styled(Link)`
-  background-color: #c7b299;
-  color: white;
-  padding: 1rem 2rem;
-  font-size: 1.2rem;
-  text-decoration: none;
-  border-radius: 50px;
-  transition: all 0.3s ease;
-  border: 3px solid #b09c7f;
-  position: relative;
-  overflow: hidden;
-  font-family: 'Playfair Display', serif;
-
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      120deg,
-      transparent,
-      rgba(255, 255, 255, 0.4),
-      transparent
-    );
-    transition: all 0.5s;
-  }
-
-  &:hover:before {
-    left: 100%;
-  }
-
-  &:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(199, 178, 153, 0.4);
-  }
-`;
-
 const MenuWrapper = styled.nav`
   position: absolute;
   top: 20px;
