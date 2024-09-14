@@ -5,6 +5,7 @@ import movieNightBg from '../assets/movienight.jpg';
 import ticketBg from '../assets/ticket-bg.jpg';
 import blueBg from '../assets/blue.jpg';
 import freewillyPoster from '../assets/freewilly.jpg';
+import pizzaBg from '../assets/pizza.jpg';
 
 const bounce = keyframes`
   0%, 20%, 50%, 80%, 100% {
@@ -241,14 +242,10 @@ const DownArrow = styled.div`
 const HomeContainer = styled.div`
   height: 100vh;
   overflow-y: scroll;
-  // Remove or comment out the following line:
-  // scroll-snap-type: y mandatory;
 `;
 
 const HeroSection = styled.section`
   height: 100vh;
-  // Remove or comment out the following line if it exists:
-  // scroll-snap-align: start;
   position: relative;
 `;
 
@@ -257,8 +254,6 @@ const WhiteSection = styled.section`
   padding: 50px 20px;
   box-sizing: border-box;
   position: relative;
-  // Remove or comment out the following line if it exists:
-  // scroll-snap-align: start;
 
   &::before {
     content: '';
@@ -332,6 +327,32 @@ const FilmSynopsis = styled.p`
   color: #333;
 `;
 
+const AboutSection = styled.section`
+  background-image: url(${pizzaBg});
+  background-size: cover;
+  background-position: center;
+  padding: 120px 20px;
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const AboutContent = styled.p`
+  font-family: 'Caveat', cursive;
+  font-size: 2.2rem;
+  color: white;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+`;
+
 function Home() {
   const scrollToWhiteSection = () => {
     const whiteSection = document.querySelector('.white-section');
@@ -389,6 +410,11 @@ function Home() {
           </EventContainer>
         </EventSection>
       </WhiteSection>
+      <AboutSection>
+        <AboutContent>
+          Dine 'n' Doc is all about good vibes, good food, and good conversation. We meet in living rooms across the Bay Area, share pizza, and watch docs that make you think—without taking ourselves too seriously. It's a night to gather intentionally, reflect on the stories we see, and spark meaningful conversations. With special guests, including the filmmakers, it's all about celebrating community and ideas that matter.
+        </AboutContent>
+      </AboutSection>
     </HomeContainer>
   );
 }
